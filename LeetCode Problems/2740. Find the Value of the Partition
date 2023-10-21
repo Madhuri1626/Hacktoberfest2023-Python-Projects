@@ -1,0 +1,13 @@
+class Solution:
+    def findValueOfPartition(self, nums: List[int]) -> int:
+        nums.sort()
+        minn = -1
+        for i in range(len(nums)-1):
+            dd = nums[i+1]-nums[i]
+            if minn == -1:
+                minn = dd
+            else:
+                if dd<minn:
+                    minn = dd
+        return minn
+        
